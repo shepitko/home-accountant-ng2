@@ -4,9 +4,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6" style="padding:0;">
     <h3>Всего</h3>
-    круглый чарт
+    <base-chart class="chart"
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></base-chart>
   </div>
   <div class="col-md-6">
     таблица

@@ -12,8 +12,12 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
+      //ng2-bootstrap
       'ng2-bootstrap/**/*.js',
-      'moment/moment.js'
+      'moment/moment.js',
+      //ng2-charts
+      'chart.js/dist/Chart.bundle.js',
+      'ng2-charts/**/*.+(js|js.map)'
     ]
   });
 };
