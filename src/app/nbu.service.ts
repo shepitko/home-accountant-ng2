@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-const BASE_URL = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange';
+const BASE_URL = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5';
 const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 
 export interface Nbu {

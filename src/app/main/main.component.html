@@ -1,3 +1,5 @@
-<p>
-  main works!
-</p>
+<ul>
+  <li *ngFor="let cours of courses; let i = index ">
+    {{cours['ccy']}}(покупка:{{cours['buy']}}, продажа:{{cours['sale']}})
+  </li>
+</ul>

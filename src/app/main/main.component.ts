@@ -10,7 +10,7 @@ import { NbuService, Nbu } from '../nbu.service';
 })
 export class MainComponent implements OnInit {
 
-  courses: Array<Nbu>;
+  courses: any;
   selectedNbu: Nbu;
 
   constructor(private nbuService: NbuService) {}
@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
       .then(courses => {
         this.courses = courses;
       });
-      console.log(this.courses);
+      
+      /*console.log(this.nbuService.loadNbu());*/
   }
 }
