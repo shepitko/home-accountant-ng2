@@ -3,3 +3,12 @@
     {{cours['ccy']}}(покупка:{{cours['buy']}}, продажа:{{cours['sale']}})
   </li>
 </ul>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let category of categories; let i = index ">
+    <i class="fa fa-2x fa-{{category['path_img']}}"></i> 
+    <span class="{{ category['types'] == 'income' ? 'green' : 'red' }}">
+      {{category['name']}}
+    </span>
+  </li>
+</ul>
