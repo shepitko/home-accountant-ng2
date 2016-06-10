@@ -35,4 +35,27 @@ export class CategoryService {
       .map(res => res.json())
       .toPromise();
   }
+
+  saveCategory(category: Category) {
+    return (category.id) ? this.updateCategory(category) : this.createCategory(category);
+  }
+
+  createCategory(category: Category) {
+    return this.http.post(`${BASE_URL}`, JSON.stringify(category), HEADER)
+      .map(res => res.json())
+      .toPromise();
+  }
+
+  updateCategory(category: Category) {
+    return this.http.put(`${BASE_URL}${category.id}`, JSON.stringify(category), HEADER)
+      .map(res => res.json())
+      .toPromise();
+  }
+
+  deleteCategory(category: Category) {
+    return this.http.delete(`${BASE_URL}${category.id}`)
+      .map(res => res.json())
+      .toPromise();
+  }
+
 }
