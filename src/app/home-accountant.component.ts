@@ -4,6 +4,8 @@ import { Router, Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/ro
 import { MainComponent } from './main';
 import { IncomeComponent } from './income';
 import { SpendComponent } from './spend';
+//services
+
 
 @Component({
   moduleId: module.id,
