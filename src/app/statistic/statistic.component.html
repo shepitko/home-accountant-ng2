@@ -1,0 +1,53 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="text-center">За весь период</h3>
+  </div>
+  <div class="col-md-6" >
+    <base-chart class="chart well"
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></base-chart>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-responsive table-bordered">
+      <tr>
+        <th>{{doughnutChartLabels[0]}}</th>
+        <th>{{doughnutChartLabels[1]}}</th>
+      </tr>
+      <tr>
+        <td>{{doughnutChartData[0]}} грн.</td>
+        <td>{{doughnutChartData[1]}} грн.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="text-center">За полгода</h3>
+  </div>
+  <div class="col-md-6">
+    <base-chart class="chart well" 
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [colors]="barChartColours"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></base-chart>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-responsive table-bordered">
+      <tr>
+        <th *ngFor="let label of barChartLabels">{{label}}</th>
+      </tr>
+      <tr *ngFor="let d of barChartData">
+        <td *ngFor="let label of barChartLabels; let j=index">{{d && d.data[j]}} <small>грн</small></td>
+      </tr>
+    </table>
+  </div>
+</div>
