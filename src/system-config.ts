@@ -4,15 +4,25 @@
 /** Map relative paths to URLs. */
 const map: any = {
   'moment': 'vendor/moment/moment.js',
+  'ng2-charts': 'vendor/ng2-charts',
+  'chartjs': 'vendor/chart.js',
   'ng2-bootstrap': 'vendor/ng2-bootstrap'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  'vendor/ng2-bootstrap': {
+    'vendor/ng2-bootstrap': {
       defaultExtension: 'js',           
+    },
+    'chartjs': { 
+    format: 'global',
+    defaultExtension: 'js', 
+    main: 'dist/Chart.bundle.js'
+    },
+    'ng2-charts': {
+      main: 'bundles/ng2-charts.min.js'
     }
-};
+  };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************

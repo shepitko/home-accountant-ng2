@@ -1,0 +1,29 @@
+.red{
+  /*color:red;*/
+}
+.green{
+  color:green;
+}
+.circle{
+    display: inline-block;
+    text-align: center;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    margin: auto;
+}
+.category-icon{
+  margin-top:5px;
+}
+.back-red{
+  background-color:LightSalmon ;
+}
+.back-green{
+  background-color:lightgreen;
+}
+.list-group-item {
+  padding: 2px 5px;
+}
+.i-b{
+  display: inline-block;
+}

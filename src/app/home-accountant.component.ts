@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { StatisticComponent } from './statistic';
-import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { Router, Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MainComponent } from './main';
 import { IncomeComponent } from './income';
 import { SpendComponent } from './spend';
+//services
+
 
 @Component({
   moduleId: module.id,
@@ -14,11 +16,12 @@ import { SpendComponent } from './spend';
   providers: [ROUTER_PROVIDERS]
 })
 @Routes([
-  {path: '/', component: MainComponent},
+  {path: '/home', component: MainComponent},
   {path: '/statistic', component: StatisticComponent},
   {path: '/income', component: IncomeComponent},
   {path: '/spend', component: SpendComponent}
   ])
 export class HomeAccountantAppComponent {
+  constructor(public router: Router){}
 
 }
