@@ -1,0 +1,27 @@
+body{
+  position:relative;
+}
+  
+  .logo {
+    margin-bottom: 10px;
+  } 
+  #LogBlock{
+      position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  }
+  .login-form{
+    border-width: 1px; border-style: solid ;border-color:green
+  }
+p{
+  font-size:14px;
+}
+
+#content {
+    position: absolute;
+   
+   height:10px;
+   width:100%;
+   background-color: green;
+   bottom:0px;
+   }

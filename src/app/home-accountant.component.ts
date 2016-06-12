@@ -4,6 +4,8 @@ import { Router, Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/ro
 import { MainComponent } from './main';
 import { IncomeComponent } from './income';
 import { SpendComponent } from './spend';
+import {LoginComponent} from './auth/login';
+import {SignUpComponent} from './auth/sign-up';
 //services
 
 
@@ -19,7 +21,9 @@ import { SpendComponent } from './spend';
   {path: '/home', component: MainComponent},
   {path: '/statistic', component: StatisticComponent},
   {path: '/income', component: IncomeComponent},
-  {path: '/spend', component: SpendComponent}
+  {path: '/spend', component: SpendComponent},
+  {path: '/auth/login', component:LoginComponent},
+  {path: '/auth/sign-up', component:SignUpComponent}
   ])
 export class HomeAccountantAppComponent {
   constructor(public router: Router){}
