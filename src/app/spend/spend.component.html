@@ -1,3 +1,14 @@
-<p>
-  spend works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="text-center">Расход</h3>
+  </div>
+  <div class="col-md-6">
+<base-chart class="chart well" 
+           [data]="pieChartData"
+           [labels]="pieChartLabels"
+           [chartType]="pieChartType"
+           (chartHover)="chartHovered($event)"
+           (chartClick)="chartClicked($event)"></base-chart>
+  </div>
+  </div>           
+           

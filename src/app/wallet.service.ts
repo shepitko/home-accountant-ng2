@@ -25,6 +25,18 @@ export class WalletService {
       .toPromise();
   }
 
+  loadSpendWallets(){
+    return this.http.get(BASE_URL+'types/spend')
+      .map(res => res.json())
+      .toPromise();
+  }
+
+  loadIncomeWallets(){
+    return this.http.get(BASE_URL+'types/income')
+      .map(res => res.json())
+      .toPromise();
+  }
+
   saveWallet(wallet: Wallet) {
     return (wallet.id) ? this.updateWallet(wallet) : this.createWallet(wallet);
   }
