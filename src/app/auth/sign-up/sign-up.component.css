@@ -1,7 +1,4 @@
-body{
-  position:relative;
-}
-  
+
   .logo {
     margin-bottom: 10px;
   } 
@@ -25,3 +22,11 @@ p{
    background-color: green;
    bottom:0px;
    }
+   .bot{
+  position:absolute;
+  width:100%;
+  top:95%;
+  height:40px;
+  background-color:green;
+ margin-left:-230px;
+}
