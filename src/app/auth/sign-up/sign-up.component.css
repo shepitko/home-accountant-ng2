@@ -1,0 +1,17 @@
+
+  .logo {
+    margin-bottom: 10px;
+  } 
+  #LogBlock{
+      position: relative;
+  margin-top:12%;
+
+  }
+  .login-form{
+    border-width: 1px; border-style: solid ;border-color:green
+  }
+p{
+  font-size:14px;
+}
+
+  
