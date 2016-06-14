@@ -3,9 +3,9 @@
     margin-bottom: 10px;
   } 
   #LogBlock{
-      position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+      position: relative;
+  margin-top:12%;
+
   }
   .login-form{
     border-width: 1px; border-style: solid ;border-color:green
@@ -14,19 +14,4 @@ p{
   font-size:14px;
 }
 
-#content {
-    position: absolute;
-   
-   height:10px;
-   width:100%;
-   background-color: green;
-   bottom:0px;
-   }
-   .bot{
-  position:absolute;
-  width:100%;
-  top:95%;
-  height:40px;
-  background-color:green;
- margin-left:-230px;
-}
+  
