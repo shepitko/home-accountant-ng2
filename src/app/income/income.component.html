@@ -2,13 +2,54 @@
   <div class="col-md-12">
     <h3 class="text-center">Доход</h3>
   </div>
-  <div class="col-md-6">
-<base-chart class="chart well" 
-           [data]="pieChartData"
-           [labels]="pieChartLabels"
-           [chartType]="pieChartType"
-           (chartHover)="chartHovered($event)"
-           (chartClick)="chartClicked($event)"></base-chart>
+  <div class="col-md-6 col-lg-8 col-sm-12 hidden-xs panel panel-default">
+    <div class="panel-body">
+      <base-chart class="chart" 
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"></base-chart>
+    </div>
   </div>
-  </div>           
+  <div class="col-md-6 col-lg-4 col-sm-12">
+    <h4 class="text-center">По категориям</h4>
+    <table class="table table-striped table-condensed">
+      <tr>
+        <th>Категория</th>
+        <th>Сумма</th>
+      </tr>
+      <tr *ngFor="let item of sumIncome">
+        <td>
+          <i class="category-icon fa fa-{{item['category']['path_img']}}"></i>
+          {{item['category']['name']}}
+        </td>
+        <td>+{{item['price']}}</td>
+      </tr>
+      <tr class='success'>
+        <td><b>Итого:</b></td>
+        <td>+{{total}}</td>
+      </tr>
+    </table> 
+  </div>
+  <div class="col-md-6 col-lg-12 col-sm-12">
+    <h4 class="text-center">Детально</h4>
+    <table class="table table-striped table-condensed">
+      <tr>
+        <th>Сумма</th>
+        <th>Наименование</th>
+        <th>Дата</th>
+      </tr>
+      <tr *ngFor="let wallet of wallets"
+        class="'success">
+        <td>
+          +{{wallet['price']}}
+        </td>
+        <td>
+          {{wallet['name']}}
+        </td>
+        <td>{{wallet['created_at']}}</td>
+      </tr>
+    </table>
+  </div>          
            

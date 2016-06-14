@@ -17,6 +17,11 @@ import { WalletService, Wallet } from '../wallet.service';
 export class SpendComponent implements OnInit {
 
   wallets: Array<Wallet>;
+  sumSpend: any;
+  pieChartLabels:string[];
+  pieChartData:number[];
+  pieChartType:string = 'pie';
+  total: number = 0;
 
   constructor(
     private walletService: WalletService
@@ -26,13 +31,22 @@ export class SpendComponent implements OnInit {
     this.walletService.loadSpendWallets()
     .then(wallets => {
       this.wallets = wallets;
-      /*console.log(wallets);*/
+    });
+
+    this.walletService.loadSumSpendWallets()
+    .then(wallets => {
+
+      this.pieChartLabels = new Array;
+      this.pieChartData = new Array;
+      this.sumSpend = wallets;
+
+      wallets.forEach(res => {
+        this.pieChartLabels.push(res['category']['name']);
+        this.pieChartData.push(res['price']);
+        this.total += parseFloat(res['price']);
+      })
     });
   }
-  // Pie
-  public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  public pieChartData:number[] = [300, 500, 100];
-  public pieChartType:string = 'pie';
 
   // events
   public chartClicked(e:any):void {
