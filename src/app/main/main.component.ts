@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
   incomes: Array<Category>;
   wallets: Array<Wallet>;
   selectedNbu: Nbu;
+  sum = {income:0, spend:0, total:0}
 
   constructor(
     private nbuService: NbuService, 
@@ -48,16 +49,20 @@ export class MainComponent implements OnInit {
     
     this.walletService.loadWallets()
     .then(wallets => {
-      this.wallets = wallets;
-      /*console.log(wallets);*/
+      this.wallets = wallets.reverse();
     });
-
-    //minus date
-    /*
-    letminusMonth: string = new Date
-    minusMonth.setMonth(minusMonth.getMonth() - 1);
-    console.log(minusMonth.toLocaleDateString('ru-RU'))
-    */
+    
+    this.walletService.loadWallets().then(wallets => {
+      wallets.forEach(res => {
+        if(res['category']['types'] == 'spending'){
+          this.sum['spend'] += parseFloat(res['price'])
+        }else if(res['category']['types'] == 'income'){
+          this.sum['income'] += parseFloat(res['price'])
+        }
+      })
+      this.sum['total'] = this.sum['income'] - this.sum['spend']
+      console.log(this.sum);
+    });
   }
 
 }

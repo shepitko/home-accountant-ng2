@@ -16,7 +16,6 @@ export interface Wallet {
 
 @Injectable()
 export class WalletService {
-
   constructor(private http: Http) {}
 
   loadWallets() {
@@ -25,6 +24,28 @@ export class WalletService {
       .toPromise();
   }
 
+  loadSpendWallets(){
+    return this.http.get(BASE_URL+'types/spend')
+      .map(res => res.json())
+      .toPromise();
+  }
+  loadSumSpendWallets(){
+    return this.http.get(BASE_URL+'types/spend_sum')
+      .map(res => res.json())
+      .toPromise();
+  }
+
+  loadIncomeWallets(){
+    return this.http.get(BASE_URL+'types/income')
+      .map(res => res.json())
+      .toPromise();
+  }
+  loadSumIncomeWallets(){
+    return this.http.get(BASE_URL+'types/income_sum')
+      .map(res => res.json())
+      .toPromise();
+  }
+  
   saveWallet(wallet: Wallet) {
     return (wallet.id) ? this.updateWallet(wallet) : this.createWallet(wallet);
   }
