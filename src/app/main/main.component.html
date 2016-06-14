@@ -26,6 +26,7 @@
     <h4>Доходы</h4>
     <div class="list-group">
       <a href="#" class="list-group-item" *ngFor="let category of incomes; let i = index ">
+         {{category['id']}}
         <div class="circle {{ category['types'] == 'income' ? 'back-green' : 'back-red' }}">
           <i class="category-icon fa fa-{{category['path_img']}}"></i> 
         </div>
@@ -35,6 +36,7 @@
     <h4>Растраты</h4>
     <div class="list-group">
       <a href="#" class="list-group-item" *ngFor="let category of spends; let i = index ">
+        {{category['id']}}
         <div class="circle {{ category['types'] == 'income' ? 'back-green' : 'back-red' }}">
           <i class="category-icon fa fa-{{category['path_img']}}"></i> 
         </div>
@@ -53,7 +55,7 @@
       </tr>
       <tr *ngFor="let wallet of wallets; let i = index " class='i-b'
         class="{{ wallet['category']['types'] == 'income' ? 'success' : 'danger' }}">
-        <td>{{wallet['created_at'].substr(0,10)}}</td>
+        <td>{{wallet['created_at'].substr(0,10)}} {{wallet['created_at'].substr(11,8)}}</td>
         <td>
           <i class="category-icon fa fa-{{wallet['category']['path_img']}}"></i> 
         </td>

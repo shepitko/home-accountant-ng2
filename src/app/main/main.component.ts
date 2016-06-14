@@ -60,7 +60,7 @@ export class MainComponent implements OnInit {
           this.sum['income'] += parseFloat(res['price'])
         }
       })
-      this.sum['total'] = this.sum['income'] - this.sum['spend']
+      this.sum['total']= parseFloat((this.sum['income'] - this.sum['spend']).toFixed(2));
       console.log(this.sum);
     });
   }
