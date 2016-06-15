@@ -23,6 +23,28 @@
 </div>
 <div class="row">
   <div class="col-lg-2 col-md-3 col-sm-4">
+    <h4>Добавить запись</h4>
+    <form>
+      <input type="name" class="form-control" placeholder="Наименование">
+      <input type="date" class="form-control" name="bday">
+      <div dropdown [(isOpen)]="status.isopen">
+        <button type="button" class="form-control text-left" dropdownToggle [disabled]="disabled">
+          Категория <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <li class="dropdown-header text-center"><b>Доходы</b></li>
+          <li *ngFor="let category of incomes"  class="list-group-item">
+            <i class="category-icon fa fa-{{category['path_img']}}"></i> {{category['name']}}
+          </li>
+          <li class="dropdown-header text-center"><b>Расходы</b></li>
+          <li *ngFor="let category of spends" class="list-group-item">
+            <i class="category-icon fa fa-{{category['path_img']}}"></i> {{category['name']}}
+          </li>
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-success btn-block">Добавить</button>
+    </form>
+    <hr>
     <h4>Доходы</h4>
     <div class="list-group">
       <a href="#" class="list-group-item" *ngFor="let category of incomes; let i = index ">
@@ -44,6 +66,7 @@
   </div>
   <div class="col-lg-7 col-md-6 col-sm-8">
     <h4 class="text-center">Денежные движения</h4>
+    
     <table class="table table-striped table-condensed">
       <tr>
         <th>Дата</th>
@@ -53,7 +76,7 @@
       </tr>
       <tr *ngFor="let wallet of wallets; let i = index " class='i-b'
         class="{{ wallet['category']['types'] == 'income' ? 'success' : 'danger' }}">
-        <td>{{wallet['created_at'].substr(0,10)}}</td>
+        <td>{{wallet['created_at'].substr(0,10)}} <!--{{wallet['created_at'].substr(11,8)}}--></td>
         <td>
           <i class="category-icon fa fa-{{wallet['category']['path_img']}}"></i> 
         </td>
@@ -62,7 +85,7 @@
         </td>
         <td>
           {{ wallet['category']['types'] == 'income' ? '+' : '-' }}
-          {{wallet['price']}}
+          {{wallet['price']}} грн.
         </td>
       </tr>
     </table>
