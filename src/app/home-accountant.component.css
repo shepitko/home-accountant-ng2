@@ -6,7 +6,11 @@
   margin-top: -10px;
   width:98px
 }
-
+#icon
+{
+  margin-top: -8px;
+   width:35px;
+}
 ul{
   font-size:17px;
 }
