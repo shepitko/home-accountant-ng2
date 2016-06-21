@@ -23,28 +23,6 @@
 </div>
 <div class="row">
   <div class="col-lg-2 col-md-3 col-sm-4">
-    <h4>Добавить запись</h4>
-    <form>
-      <input type="name" class="form-control" placeholder="Наименование">
-      <input type="date" class="form-control" name="bday">
-      <div dropdown [(isOpen)]="status.isopen">
-        <button type="button" class="form-control text-left" dropdownToggle [disabled]="disabled">
-          Категория <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-          <li class="dropdown-header text-center"><b>Доходы</b></li>
-          <li *ngFor="let category of incomes"  class="list-group-item">
-            <i class="category-icon fa fa-{{category['path_img']}}"></i> {{category['name']}}
-          </li>
-          <li class="dropdown-header text-center"><b>Расходы</b></li>
-          <li *ngFor="let category of spends" class="list-group-item">
-            <i class="category-icon fa fa-{{category['path_img']}}"></i> {{category['name']}}
-          </li>
-        </ul>
-      </div>
-      <button type="submit" class="btn btn-success btn-block">Добавить</button>
-    </form>
-    <hr>
     <h4>Доходы</h4>
     <div class="list-group">
       <a href="#" class="list-group-item" *ngFor="let category of incomes; let i = index ">
@@ -112,6 +90,28 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" >
+    <h4>Добавить запись</h4>
+    <form>
+      <input type="name" class="form-control" placeholder="Наименование">
+      <input type="date" class="form-control" name="bday">
+      <div dropdown [(isOpen)]="status.isopen">
+        <button type="button" class="form-control text-left" dropdownToggle [disabled]="disabled">
+          Категория <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <li class="dropdown-header text-center"><b>Доходы</b></li>
+          <li *ngFor="let category of incomes"  class="list-group-item">
+            <i class="category-icon fa fa-{{category['path_img']}}"></i> {{category['name']}}
+          </li>
+          <li class="dropdown-header text-center"><b>Расходы</b></li>
+          <li *ngFor="let category of spends" class="list-group-item">
+            <i class="category-icon fa fa-{{category['path_img']}}"></i> {{category['name']}}
+          </li>
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-success btn-block">Добавить</button>
+    </form>
+    <hr>
     <h4 class="text-center">Инфо</h4>
     <div class="row">
       <div class="col-md-12">
